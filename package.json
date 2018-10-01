@@ -1,0 +1,19 @@
+{
+  "name": "siicanada_front",
+  "version": "1.0.0",
+  "description": "siicanada_front",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/clemtrib/siicanada_front.git"
+  },
+  "author": "clement tribouillard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clemtrib/siicanada_front/issues"
+  },
+  "homepage": "https://github.com/clemtrib/siicanada_front#readme"
+}
