@@ -1,7 +1,6 @@
 import React from "react"
-import style from "./app.css"
 
-export default class Annonce extends React.Component {
+export default class JobAd extends React.Component {
     constructor() {
         super()
         this.state = {
