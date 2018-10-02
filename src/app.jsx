@@ -1,12 +1,17 @@
 import React from "react"
-import style from "./app.css"
+import {Link} from "react-router-dom"
+// import style from "./app.css"
+import Annonce from "./annonce"
 
 export default class App extends React.Component {
     render() {
-        let text = "hello world !"
+        const description = `vthwedf jwgds vwjdsgwey fweufdgvwe yugwedysjwe tywed`
         return (
             <div>
-                <h1 className={style.title}>Hello World</h1>
+                <Annonce title="web developer" createdAt="20181012" contract={1} description={description}  />
+                <Link to="/contact">
+                    Contact
+                </Link>
             </div>
         )
     }
