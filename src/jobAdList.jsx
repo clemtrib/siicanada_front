@@ -1,45 +1,46 @@
 import React from "react"
 import JobAd from "./jobAd"
+import JobAdListItem from "./jobAdListItem"
 
 export default class JobAdList extends React.Component {
     render() {
 
         const description = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu cursus metus. Curabitur pharetra odio vitae nisl pharetra, sit amet bibendum mauris accumsan.`
 
-        const  ads = [
+        const ads = [
             {
-                id : 1,
+                id: 1,
                 title: "web developer",
-                createdAt: "20181012", 
-                contract: 3, 
+                createdAt: "20181012",
+                contract: 3,
                 description: description
             }, {
-                id : 2,
+                id: 2,
                 title: "web designer",
-                createdAt: "20181012", 
-                contract: 1, 
+                createdAt: "20181012",
+                contract: 1,
                 description: description
             }, {
-                id : 3,
+                id: 3,
                 title: "account manager",
-                createdAt: "20181012", 
-                contract: 2, 
+                createdAt: "20181012",
+                contract: 2,
                 description: description
             }
         ]
 
         const list = ads.map((ad) =>
-            <tr key={ad.id}>
-                <td>{ad.title.toUpperCase()}</td>
-            </tr>
+            <JobAdListItem id={ad.id} title={ad.title.toUpperCase()} createdAt={ad.createdAt} contract={ad.contract} description={ad.description} />
         );
 
         return (
             <div>
                 <table>
-                    {list}
+                    <tbody>
+                        {list}
+                    </tbody>
                 </table>
-                <JobAd title="web developer" createdAt="20181012" contract={1} description={description}  />
+                <JobAd title={ads[0].title} createdAt={ads[0].createdAt} contract={ads[0].contract} description={ads[0].description} />
             </div>
         )
     }

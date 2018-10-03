@@ -1,6 +1,9 @@
 import React from "react"
 
+import style from './app.css'
+
 export default class ContactForm extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -32,32 +35,40 @@ export default class ContactForm extends React.Component {
         console.log(this.state)
         event.preventDefault()
     }
-    
+
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Name:
-                    <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
-                </label>
-                <label>
-                    Email:
-                    <input name="email" type="text" value={this.state.email} onChange={this.handleChange} />
-                </label>
-                <label>
-                    Phone:
-                    <input name="phone" type="text" value={this.state.phone} onChange={this.handleChange} />
-                </label>
-                <label>
-                    Object:
-                    <input name="object" type="text" value={this.state.object} onChange={this.handleChange} />
-                </label>
-                <label>
-                    Message:
-                    <textarea name="message" value={this.state.message} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+            <div className={style.contactForm}>
+                <div className={style.container}>
+                    <form onSubmit={this.handleSubmit}>
+                        <ul className={style.flexOuter}>
+                            <li>
+                                <label for="name">Name:</label>
+                                <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
+                            </li>
+                            <li>
+                                <label for="email">Email:</label>
+                                <input type="text" value={this.state.email} onChange={this.handleChange} />
+                            </li>
+                            <li>
+                                <label for="phone">Phone:</label>
+                                <input name="phone" type="text" value={this.state.phone} onChange={this.handleChange} />
+                            </li>
+                            <li>
+                                <label for="object">Object:</label>
+                                <input name="object" type="text" value={this.state.object} onChange={this.handleChange} />
+                            </li>
+                            <li>
+                                <label for="message">Message:</label>
+                                <textarea name="message" value={this.state.message} onChange={this.handleChange} />
+                            </li>
+                            <li>
+                                <input type="submit" value="Submit" />
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
         );
     }
 }

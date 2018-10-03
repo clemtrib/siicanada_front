@@ -59,7 +59,24 @@ var common = {
                             localIdentName : '[path][name]__[local]--[hash:base64:5]',
                         },
                     }],
+                },
+                /*
+                {
+                    test: /\.(jpe?g|png|gif|svg)$/i, 
+                    loader: "file-loader?name=/public/[name].[ext]"
+                },
+                */
+
+               {
+                    test: /\.(png|jpg|gif)$/,
+                    use: [{
+                        loader: 'file-loader',
+                        options: {}
+                    }]
                 }
+                
+               
+            
             ]
         }
     }

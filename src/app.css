@@ -1,41 +1,161 @@
 * {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    padding: 10px;
+  margin: 0;
+  padding: 0;
+  font-family: Calibri;
 }
 
 .app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
-    margin: 0;
-    margin-bottom: 20px;
-}
-
-.footer {
-    width: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0;
-    margin-top: 100px;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .errorMessage {
-    color: #f0f0f0;
-    font-size: 170px;
-    line-height: 1;
-    font-weight: 700;
+  color: #f0f0f0;
+  font-size: 170px;
+  line-height: 1;
+  font-weight: 700;
 }
 
 ul {
-    list-style: none;
-    display: inline;
+  list-style: none;
+}
+
+.intro {
+  width: 100%;
+  background: #f3f5f8;
+  padding: 90px 0 100px;
+  text-align: center;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.row { 
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+h1.arrow {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #353535;
+  /*color: #005aa2;*/
+  letter-spacing: 1px;
+  padding-bottom: 30px;
+  font-weight: bold;
+  background: url(../public/h1-bg.png) no-repeat center bottom;
+}
+
+.intro p:first-of-type {
+  margin: 50px 0 0;
+}
+            
+p {
+  color: #8c9398;
+  word-spacing: 1px;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.contactForm {
+  width: 100%;
+  background: #88b4dc;
+  padding: 90px 0 100px;
+  text-align: center;
+}
+
+.flexOuter {
+  list-style-type: none;
+  padding: 0;
+}
+
+.flexOuter li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flexOuter > li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.flexOuter li label,
+.flexOuter li p {
+  padding: 8px;
+  font-weight: 300;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.flexOuter > li > label/*,
+.flexOuter li p*/ {
+  flex: 1 0 120px;
+  max-width: 220px;
+}
+
+.flexOuter > li > label + * {
+  flex: 1 0 220px;
+}
+
+/*
+.flexOuter li p {
+  margin: 0;
+}
+*/
+
+.flexOuter li input:not([type='checkbox']),
+.flexOuter li textarea {
+  padding: 15px;
+  border: none;
+}
+
+.flexOuter li input[type='submit'] {
+  margin-left: auto;
+  padding: 8px 16px;
+  border: none;
+  background: #333;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  border-radius: 2px;
+}
+
+.footer {
+  width: 100%;
+  background-color: #242830;
+  padding: 40px 0 30px;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
