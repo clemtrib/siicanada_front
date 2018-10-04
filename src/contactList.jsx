@@ -9,14 +9,17 @@ export default class ContactList extends React.Component {
 
         const ads = [
             {
+                id: 1,
                 title: "Address",
                 icon: "home.png",
                 data: `2060 rue de la Montagne, Montréal, QC, H3G 1Z7`
             }, {
+                id: 2,
                 title: "Phone",
                 icon: "phone.png",
                 data: "+1 514 416-3491"
             }, {
+                id: 3,
                 title: "Email",
                 icon: "email.png",
                 data: "contact@siicanada.com"
@@ -24,7 +27,7 @@ export default class ContactList extends React.Component {
         ]
 
         const list = ads.map((item) =>
-            <ContactListItem title={item.title} icon={item.icon} data={item.data} />
+            <ContactListItem key={item.id} title={item.title} icon={item.icon} data={item.data} />
         );
 
         return (

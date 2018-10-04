@@ -43,23 +43,23 @@ export default class ContactForm extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                         <ul className={style.flexOuter}>
                             <li>
-                                <label for="name">Name:</label>
+                                <label htmlFor="name">Name:</label>
                                 <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
                             </li>
                             <li>
-                                <label for="email">Email:</label>
+                                <label htmlFor="email">Email:</label>
                                 <input type="text" value={this.state.email} onChange={this.handleChange} />
                             </li>
                             <li>
-                                <label for="phone">Phone:</label>
+                                <label htmlFor="phone">Phone:</label>
                                 <input name="phone" type="text" value={this.state.phone} onChange={this.handleChange} />
                             </li>
                             <li>
-                                <label for="object">Object:</label>
+                                <label htmlFor="object">Object:</label>
                                 <input name="object" type="text" value={this.state.object} onChange={this.handleChange} />
                             </li>
                             <li>
-                                <label for="message">Message:</label>
+                                <label htmlFor="message">Message:</label>
                                 <textarea name="message" value={this.state.message} onChange={this.handleChange} />
                             </li>
                             <li>

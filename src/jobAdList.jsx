@@ -30,7 +30,7 @@ export default class JobAdList extends React.Component {
         ]
 
         const list = ads.map((ad) =>
-            <JobAdListItem id={ad.id} title={ad.title.toUpperCase()} createdAt={ad.createdAt} contract={ad.contract} description={ad.description} />
+            <JobAdListItem key={ad.id} title={ad.title.toUpperCase()} createdAt={ad.createdAt} contract={ad.contract} description={ad.description} />
         );
 
         return (
