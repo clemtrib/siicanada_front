@@ -27,6 +27,10 @@ ul {
   list-style: none;
 }
 
+.large {
+  width: 100%;
+}
+
 .intro {
   width: 100%;
   background: #f3f5f8;
@@ -58,11 +62,6 @@ ul {
   padding-right: 15px;
 }
 
-.row { 
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
 h1.arrow {
   font-size: 15px;
   text-transform: uppercase;
@@ -74,8 +73,8 @@ h1.arrow {
   background: url(../public/h1-bg.png) no-repeat center bottom;
 }
 
-.intro p:first-of-type {
-  margin: 50px 0 0;
+.intro > .container > div:first-of-type {
+  margin-top: 50px;
 }
             
 p {
@@ -90,6 +89,10 @@ p {
   background: #88b4dc;
   padding: 90px 0 100px;
   text-align: center;
+}
+
+.contactItem {
+  padding: 10px;
 }
 
 .flexOuter {
@@ -147,6 +150,98 @@ p {
   letter-spacing: .09em;
   border-radius: 2px;
 }
+
+.contactListItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contactListItems > div {
+  width: 25%;
+  margin: 0;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  
+  .contactListItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .contactListItems > div {
+    width: 100%;
+    margin: 20px 0 0 0;
+    padding: 20px;
+  }
+
+}
+
+.contactListItems h3,
+.contactListItems p {
+  display: block;
+}
+
+.contactListItems h3 {
+  color: #005aa2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.contactListItems p {
+  font-size: 16px;
+}
+
+.contactListItems h3::after {
+  content: " ";
+  border: solid 2px #005aa2;
+  display: block;
+  width: 35px;
+  margin: 25px auto;
+}
+
+.boxHover {
+  transition: all 500ms ease-in-out;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+}
+
+.lightBox {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 3px 0px 0px #f0f2f4;
+  -moz-box-shadow: 0px 3px 0px 0px #f0f2f4;
+  box-shadow: 0px 3px 0px 0px #f0f2f4;
+  padding: 20px 0;
+}
+
+.boxHover:hover, .boxHover:focus {
+  transform: translate(0, -15px);
+  -webkit-transform: translate(0, -15px);
+  -ms-transform: translate(0, -15px);
+}
+
+.lightBox:hover, .lightBox:focus {
+  -webkit-box-shadow: 0px 3px 0px 0px #005aa2;
+  -moz-box-shadow: 0px 3px 0px 0px #005aa2;
+  box-shadow: 0px 3px 0px 0px #005aa2;
+}
+
+/*
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+user agent stylesheet
+div {
+  display: block;
+}
+*/
 
 .footer {
   width: 100%;

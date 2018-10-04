@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
 import Layout from './layout'
 import Home from "./home"
 import JobAdList from "./jobAdList"
-import ContactForm from "./contactForm"
+import Contact from "./contact"
 import Page404 from './404'
 
 export default class Routes extends React.Component {
@@ -13,7 +13,7 @@ export default class Routes extends React.Component {
             <Router>
                 <Switch>
                     <Layout exact path="/" component={Home} />
-                    <Layout path="/contact" component={ContactForm} />
+                    <Layout path="/contact" component={Contact} />
                     <Layout path="/jobs" component={JobAdList} />
                     <Layout path="/404" component={Page404} />
                     <Redirect to="/404" />

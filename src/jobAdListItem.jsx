@@ -24,7 +24,7 @@ export default class JobAdListItem extends React.Component {
         const day = this.props.createdAt.slice(6, 8)
         const createdAt = `${year}-${month}-${day}`
         return (
-            <tr id={this.props.id}>
+            <tr>
                 <td>{this.props.title}</td>
                 <td>{createdAt}</td>
                 <td>{this.getContract()}</td>
