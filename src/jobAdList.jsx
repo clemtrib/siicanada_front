@@ -1,4 +1,8 @@
 import React from "react"
+
+import style from './app.css'
+
+import Text from "./text"
 import JobAd from "./jobAd"
 import JobAdListItem from "./jobAdListItem"
 
@@ -34,13 +38,16 @@ export default class JobAdList extends React.Component {
         );
 
         return (
-            <div>
-                <table>
-                    <tbody>
-                        {list}
-                    </tbody>
-                </table>
-                <JobAd title={ads[0].title} createdAt={ads[0].createdAt} contract={ads[0].contract} description={ads[0].description} />
+            <div className={style.large}>
+                <Text title="Nous rejoindre" content="En recherche de postes permanents, d’opportunités en consultant, d’offres de stage ? Postulez en ligne !" />
+                <div className={`${style.large} ${style.jobAdds}`}>
+                    <table className={style.middle}>
+                        <tbody>
+                            {list}
+                        </tbody>
+                    </table>
+                    <JobAd title={ads[0].title} createdAt={ads[0].createdAt} contract={ads[0].contract} description={ads[0].description} />
+                </div>
             </div>
         )
     }

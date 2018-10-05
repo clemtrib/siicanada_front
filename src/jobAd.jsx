@@ -1,5 +1,7 @@
 import React from "react"
 
+import style from "./app.css"
+
 export default class JobAd extends React.Component {
     constructor() {
         super()
@@ -30,8 +32,8 @@ export default class JobAd extends React.Component {
         const day = this.props.createdAt.slice(6, 8)
         const createdAt = `${year}-${month}-${day}`
         return (
-            <div>
-                <h1>{this.props.title}</h1>
+            <div className={`${style.middle} ${style.jobAddDetail}`}>
+                <h3 className={style.arrow}>{this.props.title}</h3>
                 <p>Created at {createdAt}</p>
                 <p>{this.getContract()}</p>
                 <button onClick={this.changeContract} >Change contract type </button>

@@ -31,7 +31,7 @@ export default class ContactList extends React.Component {
         );
 
         return (
-            <div className={style.intro}>
+            <div className={`${style.large} ${style.text}`}>
                 <div className={style.container}>
                     <h1 className={style.arrow}>Nous contacter</h1>
                     <div className={style.contactListItems}>

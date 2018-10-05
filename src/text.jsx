@@ -5,7 +5,7 @@ import style from './app.css'
 export default class Text extends React.Component {
     render() {
         return (
-            <div className={style.intro}>
+            <div className={`${style.large} ${style.text}`}>
                 <div className={style.container}>
                     <h1 className={style.arrow}>{this.props.title}</h1>
                     <div>
