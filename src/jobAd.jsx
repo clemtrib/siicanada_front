@@ -6,24 +6,24 @@ export default class JobAd extends React.Component {
     constructor() {
         super()
         this.state = {
-            contracts: ["Permanent", "Temporaire", "VIE", "Stage"],
-            contract: 0
+            jobTypes: ["Part-time", "Full-time"],
+            jobType: 0
         }
-        this.changeContract = this.changeContract.bind(this)
+        this.changeJobType = this.changeJobType.bind(this)
     }
 
     componentWillMount() {
-        const contract = this.props.contract
-        this.setState({ contract })
+        const jobType = this.props.jobType
+        this.setState({ jobType })
     }
 
-    getContract() {
-        return this.state.contracts[this.state.contract]
+    getJobType() {
+        return this.state.jobTypes[this.state.jobType]
     }
 
-    changeContract() {
-        const contract = (this.state.contract + 1) % this.state.contracts.length
-        this.setState({ contract })
+    changeJobType() {
+        const jobType = (this.state.jobType + 1) % this.state.jobTypes.length
+        this.setState({ jobType })
     }
 
     render() {
@@ -35,8 +35,8 @@ export default class JobAd extends React.Component {
             <div className={`${style.middle} ${style.jobAddDetail}`}>
                 <h3 className={style.arrow}>{this.props.title}</h3>
                 <p>Created at {createdAt}</p>
-                <p>{this.getContract()}</p>
-                <button onClick={this.changeContract} >Change contract type </button>
+                <p>{this.getJobType()}</p>
+                <button onClick={this.changeJobType} >Change contract type </button>
                 <p>Description: {this.props.description}</p>
             </div>
         )

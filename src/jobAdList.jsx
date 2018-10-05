@@ -11,30 +11,32 @@ export default class JobAdList extends React.Component {
 
         const description = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu cursus metus. Curabitur pharetra odio vitae nisl pharetra, sit amet bibendum mauris accumsan.`
 
-        const ads = [
-            {
-                id: 1,
-                title: "web developer",
-                createdAt: "20181012",
-                contract: 3,
-                description: description
-            }, {
+        const ad1 = {
+            id: 1,
+            title: "web developer",
+            createdAt: "20181012",
+            jobType: 0,
+            description: description
+        },
+            ad2 = {
                 id: 2,
                 title: "web designer",
                 createdAt: "20181012",
-                contract: 1,
+                jobType: 1,
                 description: description
-            }, {
+            },
+            ad3 = {
                 id: 3,
                 title: "account manager",
                 createdAt: "20181012",
-                contract: 2,
+                jobType: 1,
                 description: description
             }
-        ]
+        const ads = [ad1, ad2, ad3, ad1, ad2, ad3, ad1, ad2, ad3, ad1, ad2, ad3, ad1, ad2, ad3, ad1, ad2, ad3]
 
+        let i = 0
         const list = ads.map((ad) =>
-            <JobAdListItem key={ad.id} title={ad.title.toUpperCase()} createdAt={ad.createdAt} contract={ad.contract} description={ad.description} />
+            <JobAdListItem key={i++} title={ad.title.toUpperCase()} createdAt={ad.createdAt} jobType={ad.jobType} description={ad.description} />
         );
 
         return (
@@ -46,7 +48,7 @@ export default class JobAdList extends React.Component {
                             {list}
                         </tbody>
                     </table>
-                    <JobAd title={ads[0].title} createdAt={ads[0].createdAt} contract={ads[0].contract} description={ads[0].description} />
+                    <JobAd title={ads[0].title} createdAt={ads[0].createdAt} jobType={ads[0].jobType} description={ads[0].description} />
                 </div>
             </div>
         )

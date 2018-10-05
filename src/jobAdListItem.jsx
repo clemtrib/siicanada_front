@@ -4,18 +4,18 @@ export default class JobAdListItem extends React.Component {
     constructor() {
         super()
         this.state = {
-            contracts: ["Permanent", "Temporaire", "VIE", "Stage"],
-            contract: 0
+            jobTypes: ["Part-time", "Full-time"],
+            jobType: 0
         }
     }
 
     componentWillMount() {
-        const contract = this.props.contract
-        this.setState({ contract })
+        const jobType = this.props.jobType
+        this.setState({ jobType })
     }
 
-    getContract() {
-        return this.state.contracts[this.state.contract]
+    getJobType() {
+        return this.state.jobTypes[this.state.jobType]
     }
 
     render() {
@@ -27,7 +27,7 @@ export default class JobAdListItem extends React.Component {
             <tr>
                 <td>{this.props.title}</td>
                 <td>{createdAt}</td>
-                <td>{this.getContract()}</td>
+                <td>{this.getJobType()}</td>
             </tr>
         )
     }
