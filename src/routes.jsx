@@ -1,28 +1,35 @@
 import React from "react"
-import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom"
 
 import Layout from './layout'
 import Home from "./home"
 import Careers from "./careers"
 import Contact from "./contact"
 import Page404 from './404'
-import { Provider } from "./context";
-import ads from "./careersData"
+import { Provider } from "./context"
+import { ads } from "./careersData"
 
 export default class Routes extends React.Component {
 
     constructor() {
         super()
         this.state = {
-            jobsList: ads,
+            jobsList: [],
             jobSelected: 0,
-            loadJobsList: this.loadJobsList.bind(this)
+            loadJobsList: this.loadJobsList.bind(this),
+            setJobSelected: this.setJobSelected.bind(this)
         }
     }
 
     loadJobsList() {
         this.setState({
             jobsList: ads
+        })
+    }
+
+    setJobSelected(id) {
+        this.setState({
+            jobSelected: id
         })
     }
 

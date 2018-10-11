@@ -1,5 +1,7 @@
 const description = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu cursus metus. Curabitur pharetra odio vitae nisl pharetra, sit amet bibendum mauris accumsan.`
 
+const jobTypes = ["Part-time", "Full-time"]
+
 const ad1 = {
     id: 1,
     title: "Electrical/Avionics systems engineer (FAL)",
@@ -39,4 +41,4 @@ const ad1 = {
 
 const ads = [ad1, ad2, ad3, ad1, ad2, ad3, ad1, ad2, ad3, ad1, ad2, ad3, ad1, ad2, ad3, ad1, ad2, ad3]
 
-export default ads
+export { ads, jobTypes }

@@ -5,14 +5,19 @@ import JobAdListItem from "./jobAdListItem"
 
 export default class JobAdList extends React.Component {
 
+    componentWillMount() {
+        if (!this.props.ads.length)
+            this.props.load()
+    }
+
     render() {
         const ads = this.props.ads
-
         return (
             <table className={style.middle}>
                 <tbody>
                     {ads.map((ad, i) =>
                         <JobAdListItem
+                            onClick={() => this.props.setJobSelected(i)}
                             key={i}
                             title={ad.title.toUpperCase()}
                             createdAt={ad.createdAt}

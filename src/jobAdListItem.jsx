@@ -20,10 +20,6 @@ export default class JobAdListItem extends React.Component {
         this.setState({ experienceMax })
     }
 
-    handleClick = () => {
-        console.log('this is:', this);
-    }
-
     getJobType() {
         return this.state.jobTypes[this.state.jobType]
     }
@@ -45,7 +41,7 @@ export default class JobAdListItem extends React.Component {
         const day = this.props.createdAt.slice(6, 8)
         const createdAt = `${year}-${month}-${day}`
         return (
-            <tr onClick={this.handleClick}>
+            <tr onClick={this.props.onClick}>
                 <td>{this.props.title}</td>
                 <td>{createdAt}</td>
                 <td>{this.getJobType()}</td>
