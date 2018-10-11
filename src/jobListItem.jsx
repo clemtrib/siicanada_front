@@ -1,27 +1,29 @@
 import React from "react"
+import { jobTypes } from "./careersData"
 
-export default class JobAdListItem extends React.Component {
+export default class JobListItem extends React.Component {
+
     constructor() {
         super()
         this.state = {
-            jobTypes: ["Part-time", "Full-time"],
-            jobType: 0,
+            type: 0,
             experienceMin: null,
             experienceMax: null
         }
     }
 
     componentWillMount() {
-        const jobType = this.props.jobtype
-        const experienceMin = this.props.experienceMin
-        const experienceMax = this.props.experienceMax
-        this.setState({ jobType })
+        const job = this.props.job,
+            type = job.type,
+            experienceMin = job.experienceMin,
+            experienceMax = job.experienceMax
+        this.setState({ type })
         this.setState({ experienceMin })
         this.setState({ experienceMax })
     }
 
     getJobType() {
-        return this.state.jobTypes[this.state.jobType]
+        return jobTypes[this.state.type]
     }
 
     getExperience() {
@@ -36,18 +38,20 @@ export default class JobAdListItem extends React.Component {
     }
 
     render() {
-        const year = this.props.createdAt.slice(0, 4)
-        const month = this.props.createdAt.slice(4, 6)
-        const day = this.props.createdAt.slice(6, 8)
-        const createdAt = `${year}-${month}-${day}`
+        const job = this.props.job,
+            year = job.createdAt.slice(0, 4),
+            month = job.createdAt.slice(4, 6),
+            day = job.createdAt.slice(6, 8),
+            createdAt = `${year}-${month}-${day}`
         return (
             <tr onClick={this.props.onClick}>
-                <td>{this.props.title}</td>
+                <td>{job.title.toUpperCase()}</td>
                 <td>{createdAt}</td>
                 <td>{this.getJobType()}</td>
-                <td>{this.props.city}</td>
+                <td>{job.city}</td>
                 <td>{this.getExperience()}</td>
             </tr>
         )
     }
+
 }
