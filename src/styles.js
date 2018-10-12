@@ -9,6 +9,34 @@ const Colors = {
     white: '#ffffff'
 }
 
+const Container = styled.div`   
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @media (min-width: 1200px) {
+        width: 1170px;
+    }
+  
+    @media (min-width: 992px) {
+        width: 970px;
+    }
+    
+    @media (min-width: 768px) {
+        width: 750px;
+    }
+`
+const TextContainer = styled.div`
+    padding: 45px 0;
+    background: #f3f5f8;
+    text-align: center;
+
+    > div > div:first-of-type {
+        margin-top: 50px;
+    }
+`
+
 const Large = styled.div`
     width: 100%;
 `
@@ -100,4 +128,4 @@ const FlexOuter = styled.ul`
     }
 `
 
-export { Colors, Large, Middle, H1arrow, H3, P, FlexOuter }
+export { Colors, Container, TextContainer, Large, Middle, H1arrow, H3, P, FlexOuter }

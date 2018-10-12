@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import style from "./app.css"
-import { P } from "./styles"
+import { Container, P } from "./styles"
 import styled from "styled-components"
 
 const Foot = styled.div`
@@ -20,12 +19,14 @@ export default class Footer extends React.Component {
     render() {
         return (
             <Foot>
-                <FootContainer className={style.container}>
-                    <P>© SII CANADA. Tous droits réservés.</P>
-                    <Link to="/">
-                        <P>About</P>
-                    </Link>
-                </FootContainer>
+                <Container>
+                    <FootContainer>
+                        <P>© SII CANADA. Tous droits réservés.</P>
+                        <Link to="/">
+                            <P>About</P>
+                        </Link>
+                    </FootContainer>
+                </Container>
             </Foot>
         )
     }

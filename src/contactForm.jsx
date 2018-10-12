@@ -1,8 +1,5 @@
 import React from "react"
-
-import style from './app.css'
-
-import { Colors, FlexOuter } from "./styles"
+import { Colors, Container, FlexOuter } from "./styles"
 import styled from 'styled-components'
 
 const ContactFormContainer = styled.div`
@@ -50,7 +47,7 @@ export default class ContactForm extends React.Component {
     render() {
         return (
             <ContactFormContainer>
-                <div className={style.container}>
+                <Container>
                     <form onSubmit={this.handleSubmit}>
                         <FlexOuter>
                             <li>
@@ -78,7 +75,7 @@ export default class ContactForm extends React.Component {
                             </li>
                         </FlexOuter>
                     </form>
-                </div>
+                </Container>
             </ContactFormContainer>
         );
     }

@@ -1,7 +1,6 @@
 import React from "react"
 import LightBox from "./lightBox"
-import style from "./app.css"
-import { Large, H1arrow } from "./styles"
+import { Container, TextContainer, H1arrow } from "./styles"
 import styled from "styled-components"
 
 const ContactListContainer = styled.div`
@@ -59,16 +58,16 @@ export default class ContactList extends React.Component {
         ]
 
         return (
-            <Large className={`${style.text}`}>
-                <div className={style.container}>
+            <TextContainer>
+                <Container>
                     <H1arrow>Nous contacter</H1arrow>
                     <ContactListContainer>
                         {elements.map((content, i) =>
                             <LightBox key={i} content={content} />
                         )}
                     </ContactListContainer>
-                </div>
-            </Large>
+                </Container>
+            </TextContainer>
         );
     }
 }
