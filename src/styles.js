@@ -45,6 +45,13 @@ const H3 = styled.h3`
     }
 `
 
+const P = styled.p`
+    color: #8c9398;
+    word-spacing: 1px;
+    line-height: 25px;
+    font-size: 14px;
+`
+
 const FlexOuter = styled.ul`
     list-style-type: none;
     padding: 0;
@@ -93,4 +100,4 @@ const FlexOuter = styled.ul`
     }
 `
 
-export { Colors, Large, Middle, H1arrow, H3, FlexOuter }
+export { Colors, Large, Middle, H1arrow, H3, P, FlexOuter }

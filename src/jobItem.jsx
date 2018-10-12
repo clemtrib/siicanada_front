@@ -1,8 +1,12 @@
 import React from "react"
 import { jobTypes } from "./careersData"
 
-import style from "./app.css"
-import { Colors, Large, Middle, H3 } from "./styles";
+import { Middle, H3, P } from "./styles";
+import styled from "styled-components"
+
+const JobItemContainer = styled.div`
+    padding: 10px;
+`
 
 export default class JobItem extends React.Component {
 
@@ -18,11 +22,13 @@ export default class JobItem extends React.Component {
             day = (job.createdAt || "").slice(6, 8),
             createdAt = `${year}-${month}-${day}`
         return (
-            <Middle className={`${style.jobAddDetail}`}>
-                <H3 className={style.arrow}>{job.title}</H3>
-                <p>Created at {createdAt}</p>
-                <p>{jobTypes[job.type]}</p>
-                <p>Description: {job.description}</p>
+            <Middle>
+                <JobItemContainer>
+                    <H3>{job.title}</H3>
+                    <P>Created at {createdAt}</P>
+                    <P>{jobTypes[job.type]}</P>
+                    <P>Description: {job.description}</P>
+                </JobItemContainer>
             </Middle>
         )
     }

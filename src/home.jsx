@@ -1,8 +1,6 @@
-import React from 'react'
-
-import { Colors, Large, Middle } from "./styles";
-
-import Text from './text'
+import React from "react"
+import { Large } from "./styles"
+import Text from "./text"
 
 export default class Home extends React.Component {
     render() {

@@ -1,8 +1,7 @@
 import React from "react"
 import { jobTypes } from "./careersData"
-
-import styled from 'styled-components'
-import { Colors, Large, Middle, H3 } from "./styles";
+import styled from "styled-components"
+import { Colors } from "./styles";
 
 const Line = styled.tr`
     border-right-style: none;

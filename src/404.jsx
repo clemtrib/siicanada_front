@@ -1,11 +1,19 @@
 import React from 'react'
 
-import style from './app.css'
+import { Colors } from "./styles"
+import styled from "styled-components"
+
+const ErrorMessage = styled.div`
+    color: ${Colors.grey};
+    font-size: 170px;
+    line-height: 1;
+    font-weight: 700;
+`
 
 export default class Page404 extends React.Component {
     render() {
         return (
-            <div className={style.errorMessage}>404</div>
+            <ErrorMessage>404</ ErrorMessage>
         )
     }
 }

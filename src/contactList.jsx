@@ -1,9 +1,37 @@
 import React from "react"
+import LightBox from "./lightBox"
+import style from "./app.css"
+import { Large, H1arrow } from "./styles"
+import styled from "styled-components"
 
-import style from './app.css'
-import { Large, H1arrow } from "./styles";
+const ContactListContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-import LightBox from './lightBox'
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    p {
+        display: block;
+        font-size: 16px;
+    }
+
+    > div {
+        width: 25%;
+        margin: 0;
+        padding: 20px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            margin: 20px 0 0 0;
+            padding: 20px;
+        }
+    }
+`
 
 export default class ContactList extends React.Component {
     render() {
@@ -34,11 +62,11 @@ export default class ContactList extends React.Component {
             <Large className={`${style.text}`}>
                 <div className={style.container}>
                     <H1arrow>Nous contacter</H1arrow>
-                    <div className={style.contactListItems}>
+                    <ContactListContainer>
                         {elements.map((content, i) =>
                             <LightBox key={i} content={content} />
                         )}
-                    </div>
+                    </ContactListContainer>
                 </div>
             </Large>
         );

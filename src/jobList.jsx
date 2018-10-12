@@ -1,8 +1,6 @@
 import React from "react"
-
 import JobListItem from "./jobListItem"
-
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const Table = styled.table`
     width: 50%;

@@ -1,6 +1,5 @@
-import React from 'react'
-
-import style from './app.css'
+import React from "react"
+import style from "./app.css"
 import { Large, H1arrow } from "./styles";
 
 export default class Text extends React.Component {

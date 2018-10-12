@@ -2,7 +2,7 @@ import React from "react"
 
 import style from './app.css'
 
-import { Colors, FlexOuter } from "./styles";
+import { Colors, FlexOuter } from "./styles"
 import styled from 'styled-components'
 
 const ContactFormContainer = styled.div`

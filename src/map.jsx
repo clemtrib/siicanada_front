@@ -2,7 +2,7 @@ import React from "react"
 
 import styled from 'styled-components'
 
-import { Colors, Large, Middle } from "./styles";
+import { Colors, Large } from "./styles";
 
 const Iframe = styled.div`
     margin: 0;

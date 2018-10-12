@@ -3,18 +3,6 @@
   padding: 0;
 }
 
-.header {
-  margin: 0;
-  margin-bottom: 20px;
-}
-
-.errorMessage {
-  color: #f0f0f0;
-  font-size: 170px;
-  line-height: 1;
-  font-weight: 700;
-}
-
 .text {
   padding: 45px 0;
   background: #f3f5f8;
@@ -49,57 +37,7 @@
 .text > .container > div:first-of-type {
   margin-top: 50px;
 }
-            
-p {
-  color: #8c9398;
-  word-spacing: 1px;
-  line-height: 25px;
-  font-size: 14px;
-}
 
 .contactItem {
-  padding: 10px;
-}
-
-.contactListItems {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.contactListItems > div {
-  width: 25%;
-  margin: 0;
-  padding: 20px;
-}
-
-@media (max-width: 768px) {
-  
-  .contactListItems {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .contactListItems > div {
-    width: 100%;
-    margin: 20px 0 0 0;
-    padding: 20px;
-  }
-
-}
-
-.contactListItems p {
-  display: block;
-  font-size: 16px;
-}
-
-.jobAdds {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.jobAddDetail {
   padding: 10px;
 }

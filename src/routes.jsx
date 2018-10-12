@@ -1,11 +1,10 @@
 import React from "react"
 import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom"
-
 import Layout from './layout'
 import Home from "./home"
 import Careers from "./careers"
 import Contact from "./contact"
-import Page404 from './404'
+import Page404 from "./404"
 import { Provider } from "./context"
 import { ads } from "./careersData"
 

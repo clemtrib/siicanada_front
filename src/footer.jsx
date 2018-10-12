@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
-import style from './app.css'
-import styled from 'styled-components'
+import React from "react"
+import { Link } from "react-router-dom"
+import style from "./app.css"
+import { P } from "./styles"
+import styled from "styled-components"
 
 const Foot = styled.div`
     width: 100%;
@@ -21,9 +21,9 @@ export default class Footer extends React.Component {
         return (
             <Foot>
                 <FootContainer className={style.container}>
-                    <p>© SII CANADA. Tous droits réservés.</p>
+                    <P>© SII CANADA. Tous droits réservés.</P>
                     <Link to="/">
-                        <p>About</p>
+                        <P>About</P>
                     </Link>
                 </FootContainer>
             </Foot>

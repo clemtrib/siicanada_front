@@ -1,12 +1,19 @@
 import React from "react"
 
-import style from './app.css'
-import { Colors, Large, Middle } from "./styles";
+import { Large } from "./styles";
 
 import JobItem from "./jobItem"
 import JobList from "./jobList"
 import { Consumer } from "./context";
 import Text from "./text"
+
+import styled from 'styled-components'
+
+const Jobs = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`
 
 export default class Careers extends React.Component {
     render() {
@@ -18,10 +25,10 @@ export default class Careers extends React.Component {
                     return (
                         <Large>
                             <Text title="Nous rejoindre" content="En recherche de postes permanents, d’opportunités en consultant, d’offres de stage ? Postulez en ligne !" />
-                            <Large className={`${style.jobAdds}`}>
+                            <Jobs>
                                 <JobList jobs={jobs} load={loadJobsList} setJobSelected={setJobSelected} />
                                 <JobItem job={job} />
-                            </Large>
+                            </Jobs>
                         </Large>
                     )
                 }}
