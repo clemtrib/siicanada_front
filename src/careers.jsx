@@ -1,14 +1,12 @@
 import React from "react"
 
-
 import style from './app.css'
+import { Colors, Large, Middle } from "./styles";
 
 import JobItem from "./jobItem"
 import JobList from "./jobList"
 import { Consumer } from "./context";
-
 import Text from "./text"
-
 
 export default class Careers extends React.Component {
     render() {
@@ -18,13 +16,13 @@ export default class Careers extends React.Component {
                     const jobs = jobsList,
                         job = jobs[jobSelected] || {}
                     return (
-                        <div className={style.large}>
+                        <Large>
                             <Text title="Nous rejoindre" content="En recherche de postes permanents, d’opportunités en consultant, d’offres de stage ? Postulez en ligne !" />
-                            <div className={`${style.large} ${style.jobAdds}`}>
+                            <Large className={`${style.jobAdds}`}>
                                 <JobList jobs={jobs} load={loadJobsList} setJobSelected={setJobSelected} />
                                 <JobItem job={job} />
-                            </div>
-                        </div>
+                            </Large>
+                        </Large>
                     )
                 }}
             </Consumer>

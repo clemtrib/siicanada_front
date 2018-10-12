@@ -1,44 +1,46 @@
 import React from "react"
 
 import style from './app.css'
+import { Large, H1arrow } from "./styles";
 
-import ContactListItem from './contactListItem'
+import LightBox from './lightBox'
 
 export default class ContactList extends React.Component {
     render() {
 
-        const ads = [
+        const elements = [
             {
                 id: 1,
                 title: "Address",
+                type: "address",
                 icon: "home.png",
                 data: `2060 rue de la Montagne, Montréal, QC, H3G 1Z7`
             }, {
                 id: 2,
                 title: "Phone",
+                type: "phone",
                 icon: "phone.png",
                 data: "+1 514 416-3491"
             }, {
                 id: 3,
                 title: "Email",
+                type: "email",
                 icon: "email.png",
                 data: "contact@siicanada.com"
             }
         ]
 
-        const list = ads.map((item) =>
-            <ContactListItem key={item.id} title={item.title} icon={item.icon} data={item.data} />
-        );
-
         return (
-            <div className={`${style.large} ${style.text}`}>
+            <Large className={`${style.text}`}>
                 <div className={style.container}>
-                    <h1 className={style.arrow}>Nous contacter</h1>
+                    <H1arrow>Nous contacter</H1arrow>
                     <div className={style.contactListItems}>
-                        {list}
+                        {elements.map((content, i) =>
+                            <LightBox key={i} content={content} />
+                        )}
                     </div>
                 </div>
-            </div>
+            </Large>
         );
     }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import style from './app.css'
+import { Colors, Large, Middle } from "./styles";
 
 import Text from './text'
 
@@ -12,9 +12,9 @@ export default class Home extends React.Component {
             Quisque venenatis scelerisque nibh nec molestie. Integer euismod condimentum nulla in tristique. Donec enim mi, hendrerit vitae bibendum vitae, tempor id dolor. Proin lobortis lacus fringilla hendrerit finibus. Quisque maximus convallis leo eu hendrerit. Phasellus a purus porta, luctus justo sed, fermentum magna. Duis quam lacus, ultricies aliquam vehicula vel, condimentum ut lorem. Donec in placerat augue, quis consectetur ligula.
         `
         return (
-            <div className={style.large}>
+            <Large>
                 <Text title="Votre partenaire technologique sur Montréal et Toronto" content={content} />
-            </div>
+            </Large>
         )
     }
 }

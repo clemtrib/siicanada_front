@@ -2,6 +2,7 @@ import React from "react"
 import { jobTypes } from "./careersData"
 
 import style from "./app.css"
+import { Colors, Large, Middle, H3 } from "./styles";
 
 export default class JobItem extends React.Component {
 
@@ -17,12 +18,12 @@ export default class JobItem extends React.Component {
             day = (job.createdAt || "").slice(6, 8),
             createdAt = `${year}-${month}-${day}`
         return (
-            <div className={`${style.middle} ${style.jobAddDetail}`}>
-                <h3 className={style.arrow}>{job.title}</h3>
+            <Middle className={`${style.jobAddDetail}`}>
+                <H3 className={style.arrow}>{job.title}</H3>
                 <p>Created at {createdAt}</p>
                 <p>{jobTypes[job.type]}</p>
                 <p>Description: {job.description}</p>
-            </div>
+            </Middle>
         )
     }
 

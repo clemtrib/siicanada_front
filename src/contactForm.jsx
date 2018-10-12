@@ -2,6 +2,17 @@ import React from "react"
 
 import style from './app.css'
 
+import { Colors, FlexOuter } from "./styles";
+import styled from 'styled-components'
+
+const ContactFormContainer = styled.div`
+    width: 100%;
+    background: ${Colors.lightblue};
+    padding: 90px 0 100px;
+    text-align: center;
+    color: ${Colors.white};
+`
+
 export default class ContactForm extends React.Component {
 
     constructor(props) {
@@ -38,10 +49,10 @@ export default class ContactForm extends React.Component {
 
     render() {
         return (
-            <div className={style.contactForm}>
+            <ContactFormContainer>
                 <div className={style.container}>
                     <form onSubmit={this.handleSubmit}>
-                        <ul className={style.flexOuter}>
+                        <FlexOuter>
                             <li>
                                 <label htmlFor="name">Name:</label>
                                 <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
@@ -65,10 +76,10 @@ export default class ContactForm extends React.Component {
                             <li>
                                 <input type="submit" value="Submit" />
                             </li>
-                        </ul>
+                        </FlexOuter>
                     </form>
                 </div>
-            </div>
+            </ContactFormContainer>
         );
     }
 }

@@ -1,6 +1,35 @@
 import React from "react"
 import { jobTypes } from "./careersData"
 
+import styled from 'styled-components'
+import { Colors, Large, Middle, H3 } from "./styles";
+
+const Line = styled.tr`
+    border-right-style: none;
+    border-left-style: none;
+    width: 50%;
+    text-align: left;
+
+    :nth-child(odd) {
+        background-color: ${Colors.grey};
+    }
+
+    :nth-child(even) {
+        background-color: ${Colors.white};
+    }
+
+    :nth-child(even):hover,
+    :nth-child(odd):hover {
+        cursor: pointer;
+        background-color: ${Colors.darkblue};
+        color: ${Colors.grey};
+    }
+`
+
+const Cell = styled.td`
+    padding: 4px 0;
+`
+
 export default class JobListItem extends React.Component {
 
     constructor() {
@@ -44,13 +73,13 @@ export default class JobListItem extends React.Component {
             day = job.createdAt.slice(6, 8),
             createdAt = `${year}-${month}-${day}`
         return (
-            <tr onClick={this.props.onClick}>
-                <td>{job.title.toUpperCase()}</td>
-                <td>{createdAt}</td>
-                <td>{this.getJobType()}</td>
-                <td>{job.city}</td>
-                <td>{this.getExperience()}</td>
-            </tr>
+            <Line onClick={this.props.onClick}>
+                <Cell>{job.title.toUpperCase()}</Cell>
+                <Cell>{createdAt}</Cell>
+                <Cell>{this.getJobType()}</Cell>
+                <Cell>{job.city}</Cell>
+                <Cell>{this.getExperience()}</Cell>
+            </Line>
         )
     }
 
