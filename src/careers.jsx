@@ -1,13 +1,12 @@
 import React from "react"
-
 import { Large } from "./styles";
-
 import JobItem from "./jobItem"
 import JobList from "./jobList"
 import { Consumer } from "./context";
 import Text from "./text"
-
-import styled from 'styled-components'
+import styled from "styled-components"
+import { getJobs } from "./api/zoho";
+import "./api/mapper";
 
 const Jobs = styled.div`
     display: flex;
@@ -16,6 +15,11 @@ const Jobs = styled.div`
 `
 
 export default class Careers extends React.Component {
+
+    componentDidMount() {
+        getJobs((jobs) => console.log(`componentDidMount`, jobs))
+    }
+
     render() {
         return (
             <Consumer>
