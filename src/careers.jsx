@@ -17,7 +17,7 @@ const Jobs = styled.div`
 export default class Careers extends React.Component {
 
     componentDidMount() {
-        getJobs((jobs) => console.log(`componentDidMount`, jobs))
+        //getJobs((jobs) => console.log(`componentDidMount`, jobs))
     }
 
     render() {
