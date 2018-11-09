@@ -26,6 +26,11 @@ export default class Menu extends React.Component {
                             Contact
                         </Link>
                     </li>
+                    <li>
+                        <Link to="/myspace">
+                            Mon espace
+                        </Link>
+                    </li>
                 </MenuItemList>
             </div>
         )
