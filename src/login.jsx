@@ -1,6 +1,7 @@
 import React from "react"
 import { Colors, Container, FlexOuter } from "./styles"
-import styled from 'styled-components'
+import styled from "styled-components"
+import config from "./config/config"
 
 const ContactFormContainer = styled.div`
     width: 100%;
@@ -36,7 +37,7 @@ export default class ContactForm extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log(this.state)
+        console.log(this.state, config.urlBack)
         event.preventDefault()
     }
 

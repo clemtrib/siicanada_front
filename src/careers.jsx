@@ -6,7 +6,6 @@ import { Consumer } from "./context";
 import Text from "./text"
 import styled from "styled-components"
 import { getJobs } from "./api/zoho";
-import "./api/mapper";
 
 const Jobs = styled.div`
     display: flex;
@@ -17,7 +16,7 @@ const Jobs = styled.div`
 export default class Careers extends React.Component {
 
     componentDidMount() {
-        //getJobs((jobs) => console.log(`componentDidMount`, jobs))
+        getJobs((jobs) => console.log(`componentDidMount`, jobs))
     }
 
     render() {

@@ -1,15 +1,6 @@
-/**
-*
-* https://recruit.zoho.com/recruit
-* Login: 
-* Password: 
-* https://accounts.zoho.com/apiauthtoken/nb/create?SCOPE=ZohoRecruit/recruitapi&EMAIL_ID=${email}&PASSWORD=${password}
-*/
+import config from "../config/config"
 
-let token = '',
-login = '',
-password = '',
-path1 = `https://accounts.zoho.com/apiauthtoken/nb/create?SCOPE=ZohoRecruit/recruitapi&EMAIL_ID=${login}&PASSWORD=${password}`
+let token = ""
 
 const options = {
     mode: 'no-cors',
@@ -19,30 +10,27 @@ const options = {
     }
 }
 
-const getApiKey = () => fetch(path1, options).then(results => {
+const getApiKey = () => fetch(config.zohoUrlAccount(), options).then(results => {
     console.log(results)
-    return ''
 })
 
-const getApiKeyAndGetJobs = (callback) => {
-
-}
-
 const getJobs = (callback) => {
-    token = ''
-    const scope = 'ZohoRecruit'
-    const baseUrl = 'https://recruit.zoho.com/recruit/private/json/JobOpenings/getRecords'
-    const url = `${baseUrl}?authtoken=${token}&scope=${scope}`
+    
+    if(!token) {
+        token = config.zohoToken
+        //getApiKey()
+    }
+    const url = `${config.zohoUrlRecruit()}&authtoken=${token}`
 
     const req = new XMLHttpRequest()
     req.open('GET', url, false)
     req.send(null)
 
     const jobOpenings = JSON.parse(req.response).response.result.JobOpenings.row
-    const attributes = ["JOBOPENINGID", "Posting Title", "Date Opened", "Job Opening Status"]
+    const attributes = ["jobopeningid", "posting title", "date opened", "job opening status"]
 
     const jobsOpened = jobOpenings.map(({ FL }) =>
-        FL.filter(({ val }) => attributes.includes(val))
+        FL.filter(({ val }) => attributes.includes(val.toLowerCase()))
             .reduce((jobAccu, { val, content }) => {
                 const job = { ...jobAccu }
                 job[val.replace(' ', '_')] = content
@@ -50,6 +38,7 @@ const getJobs = (callback) => {
             }, {})
     )
     callback(jobsOpened)
+    
 }
 
 export { getApiKey, getJobs }

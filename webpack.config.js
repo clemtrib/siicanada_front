@@ -91,9 +91,7 @@ if (TARGET === 'start') {
     module.exports = merge(common, {
         mode: 'development',
         devServer: {
-
             contentBase: './public',
-
             port: 8000,
             proxy: {
                 '/api': {
@@ -111,9 +109,27 @@ if (TARGET === 'start') {
 }
 
 if (TARGET === 'build') {
-    console.log('Compiling front end code for production ')
+    console.log('Compiling front end code for prod ')
+
+    //   Add Hot reload for dev env
+    common.module.rules[0].options.presets.push("react-hmre")
 
     module.exports = merge(common, {
-        mode: 'production'
+        mode: 'production',
+        devServer: {
+            contentBase: './public',
+            port: 8000,
+            proxy: {
+                '/api': {
+                    target: 'http://localhost:8080',
+                    secure: false,
+                    prependPath: false
+                }
+            },
+            publicPath: 'http://localhost:8000/',
+            historyApiFallback: true
+        },
+        devtool: 'source-map'
     });
+
 }
