@@ -1,6 +1,6 @@
 import React from "react"
-import { Colors, H3, P } from "./styles"
 import styled from "styled-components"
+import { Colors, H3, P } from "./styles"
 
 const LightBoxElem = styled.div`
     transition: all 500ms ease-in-out;
@@ -23,13 +23,13 @@ const LightBoxElem = styled.div`
     }
 `
 
-export default class LightBox extends React.Component {
-    render() {
-        return (
-            <LightBoxElem>
-                <H3>{this.props.content.title}</H3>
-                <P>{this.props.content.data}</P>
-            </LightBoxElem>
-        );
-    }
+const LightBox = ({ content } = {}) => {
+  return (
+    <LightBoxElem>
+      <H3>{content.title}</H3>
+      <P>{content.data}</P>
+    </LightBoxElem>
+  )
 }
+
+export default LightBox

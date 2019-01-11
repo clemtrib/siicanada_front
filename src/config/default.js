@@ -5,13 +5,14 @@
  **/
 
 const defaultConfig = {
-    zohoLogin: ``,
-    zohoPsswd: ``,
-    zohoScope: `ZohoRecruit`,
-    zohoToken: ``, // laisser a vide  
+    debug: false,
+    zohoLogin: "",
+    zohoPsswd: "",
+    zohoScope: "ZohoRecruit",
+    zohoToken: "", // laisser a vide  
     zohoUrlAccount: function() {},
     zohoUrlRecruit: function() {},
-    urlBack: ``
+    urlBack: ""
 }
 
 export default defaultConfig

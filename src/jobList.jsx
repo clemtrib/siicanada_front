@@ -1,6 +1,6 @@
 import React from "react"
-import JobListItem from "./jobListItem"
 import styled from "styled-components"
+import JobListItem from "./jobListItem"
 
 const Table = styled.table`
     width: 50%;
@@ -13,25 +13,25 @@ const Table = styled.table`
 
 export default class JobAdList extends React.Component {
 
-    componentWillMount() {
-        if (!this.props.jobs.length)
-            this.props.load()
-    }
+  componentWillMount() {
+    const { jobs, load } = this.props ? this.props : {}
+    if (!jobs.length)
+      load()
+  }
 
-    render() {
-        const jobs = this.props.jobs
-        return (
-            <Table>
-                <tbody>
-                    {jobs.map((job, i) =>
-                        <JobListItem
-                            onClick={() => this.props.setJobSelected(i)}
-                            key={i}
-                            job={job} />
-                    )}
-                </tbody>
-            </Table>
-        )
-    }
+  //componentWillReceiveProps({ jobs } = {}) {}
+
+  render() {
+    const { jobs, setJobSelected } = this.props ? this.props : { job: {} }
+    return (
+      <Table>
+        <tbody>
+          {jobs.map((job, i) =>
+            <JobListItem onClick={() => setJobSelected(i)} key={job.id.concat(Math.random().toString(36).substring(7))} job={job} />
+          )}
+        </tbody>
+      </Table>
+    )
+  }
 
 }

@@ -1,7 +1,7 @@
 import React from "react"
+import styled from "styled-components"
 import LightBox from "./lightBox"
 import { Container, TextContainer, H1arrow } from "./styles"
-import styled from "styled-components"
 
 const ContactListContainer = styled.div`
     display: flex;
@@ -32,42 +32,41 @@ const ContactListContainer = styled.div`
     }
 `
 
-export default class ContactList extends React.Component {
-    render() {
-
-        const elements = [
-            {
-                id: 1,
-                title: "Address",
-                type: "address",
-                icon: "home.png",
-                data: `2060 rue de la Montagne, Montréal, QC, H3G 1Z7`
-            }, {
-                id: 2,
-                title: "Phone",
-                type: "phone",
-                icon: "phone.png",
-                data: "+1 514 416-3491"
-            }, {
-                id: 3,
-                title: "Email",
-                type: "email",
-                icon: "email.png",
-                data: "contact@siicanada.com"
-            }
-        ]
-
-        return (
-            <TextContainer>
-                <Container>
-                    <H1arrow>Nous contacter</H1arrow>
-                    <ContactListContainer>
-                        {elements.map((content, i) =>
-                            <LightBox key={i} content={content} />
-                        )}
-                    </ContactListContainer>
-                </Container>
-            </TextContainer>
-        );
+const ContactList = () => {
+  const elements = [
+    {
+      id: 1,
+      title: "Address",
+      type: "address",
+      icon: "home.png",
+      data: "2060 rue de la Montagne, Montréal, QC, H3G 1Z7"
+    }, {
+      id: 2,
+      title: "Phone",
+      type: "phone",
+      icon: "phone.png",
+      data: "+1 514 416-3491"
+    }, {
+      id: 3,
+      title: "Email",
+      type: "email",
+      icon: "email.png",
+      data: "contact@siicanada.com"
     }
+  ]
+
+  return (
+    <TextContainer>
+      <Container>
+        <H1arrow>Nous contacter</H1arrow>
+        <ContactListContainer>
+          {elements.map((content/*, i*/) =>
+            <LightBox key={content.id} content={content} />
+          )}
+        </ContactListContainer>
+      </Container>
+    </TextContainer>
+  )
 }
+
+export default ContactList

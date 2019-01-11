@@ -1,7 +1,7 @@
 import React from "react"
-import { jobTypes } from "./careersData"
 import styled from "styled-components"
-import { Colors } from "./styles";
+import { jobTypes } from "./careersData"
+import { Colors } from "./styles"
 
 const Line = styled.tr`
     border-right-style: none;
@@ -31,55 +31,59 @@ const Cell = styled.td`
 
 export default class JobListItem extends React.Component {
 
-    constructor() {
-        super()
-        this.state = {
-            type: 0,
-            experienceMin: null,
-            experienceMax: null
-        }
+  constructor() {
+    super()
+    this.state = {
+      type: 0,
+      experienceMin: null,
+      experienceMax: null
     }
+  }
 
-    componentWillMount() {
-        const job = this.props.job,
-            type = job.type,
-            experienceMin = job.experienceMin,
-            experienceMax = job.experienceMax
-        this.setState({ type })
-        this.setState({ experienceMin })
-        this.setState({ experienceMax })
-    }
+  componentWillReceiveProps({ job } = { job: {} }) {
+    const type = job.type,
+      experienceMin = job.experienceMin,
+      experienceMax = job.experienceMax
+    this.setState({
+      type,
+      experienceMin,
+      experienceMax
+    })
+  }
 
-    getJobType() {
-        return jobTypes[this.state.type]
-    }
+  getJobType() {
+    const { type } = this.state
+    return jobTypes[type]
+  }
 
-    getExperience() {
-        if (this.state.experienceMin == null && this.state.experienceMax == null)
-            return ``
-        else if (this.state.experienceMin == null)
-            return `${this.state.experienceMax}- years`
-        else if (this.state.experienceMax == null)
-            return `${this.state.experienceMin}+ years`
-        else
-            return `${this.state.experienceMin}-${this.state.experienceMax} years`
-    }
+  getExperience() {
+    const { experienceMin, experienceMax } = this.state
+    if (experienceMin == null && experienceMax == null)
+      return ""
+    else if (experienceMin == null)
+      return `${experienceMax}- years`
+    else if (experienceMax == null)
+      return `${experienceMin}+ years`
+    else
+      return `${experienceMin}-${experienceMax} years`
+  }
 
-    render() {
-        const job = this.props.job,
-            year = job.createdAt.slice(0, 4),
-            month = job.createdAt.slice(4, 6),
-            day = job.createdAt.slice(6, 8),
-            createdAt = `${year}-${month}-${day}`
-        return (
-            <Line onClick={this.props.onClick}>
-                <Cell>{job.title.toUpperCase()}</Cell>
-                <Cell>{createdAt}</Cell>
-                <Cell>{this.getJobType()}</Cell>
-                <Cell>{job.city}</Cell>
-                <Cell>{this.getExperience()}</Cell>
-            </Line>
-        )
-    }
+  render() {
+    const { job } = this.props ? this.props : { job: {} },
+      { onClick } = this.props ? this.props : {},
+      year = job.createdAt.slice(0, 4),
+      month = job.createdAt.slice(4, 6),
+      day = job.createdAt.slice(6, 8),
+      createdAt = `${year}-${month}-${day}`
+    return (
+      <Line onClick={onClick}>
+        <Cell>{job.title.toUpperCase()}</Cell>
+        <Cell>{createdAt}</Cell>
+        <Cell>{this.getJobType()}</Cell>
+        <Cell>{job.city}</Cell>
+        <Cell>{this.getExperience()}</Cell>
+      </Line>
+    )
+  }
 
 }

@@ -1,8 +1,8 @@
 import React from "react"
+import styled from "styled-components"
 import { Route } from "react-router-dom"
 import Header from "./header"
 import Footer from "./footer"
-import styled from "styled-components"
 
 const App = styled.div`
     font-family: Calibri;
@@ -13,13 +13,16 @@ const App = styled.div`
 `
 
 export default function Layout({ component: Page, ...rest }) {
-    return (
-        <Route {...rest} render={() => (
-            <App>
-                <Header />
-                <Page />
-                <Footer />
-            </App>
-        )} />
-    )
-};
+  return (
+    <Route
+      {...rest}
+      render={() => (
+        <App>
+          <Header />
+          <Page />
+          <Footer />
+        </App>
+      )}
+    />
+  )
+}

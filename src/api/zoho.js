@@ -3,10 +3,10 @@ import config from "../config/config"
 let token = ""
 
 const options = {
-    mode: 'no-cors',
+    mode: "no-cors",
     headers: {
-        'method': 'GET',
-        'Content-Type': 'application/json'
+        "method": "GET",
+        "Content-Type": "application/json"
     }
 }
 
@@ -23,7 +23,7 @@ const getJobs = (callback) => {
     const url = `${config.zohoUrlRecruit()}&authtoken=${token}`
 
     const req = new XMLHttpRequest()
-    req.open('GET', url, false)
+    req.open("GET", url, false)
     req.send(null)
 
     const jobOpenings = JSON.parse(req.response).response.result.JobOpenings.row
@@ -33,7 +33,7 @@ const getJobs = (callback) => {
         FL.filter(({ val }) => attributes.includes(val.toLowerCase()))
             .reduce((jobAccu, { val, content }) => {
                 const job = { ...jobAccu }
-                job[val.replace(' ', '_')] = content
+                job[val.replace(" ", "_")] = content
                 return job
             }, {})
     )

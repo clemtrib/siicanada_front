@@ -1,12 +1,13 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const Colors = {
-    beige: 'rgb(229, 227, 223)',
-    darkblue: '#005aa2',
-    grey: '#f2f2f2',
-    lightblue: '#88b4dc',
-    lightgrey: '#f0f2f4',
-    white: '#ffffff'
+    beige: "rgb(229, 227, 223)",
+    darkblue: "#005aa2",
+    grey: "#f2f2f2",
+    lightblue: "#88b4dc",
+    lightgrey: "#f0f2f4",
+    darkgrey: "#333333",
+    white: "#ffffff"
 }
 
 const Container = styled.div`   
@@ -110,17 +111,17 @@ const FlexOuter = styled.ul`
         flex: 1 0 220px;
     }
     
-    li input:not([type='checkbox']),
+    li input:not([type="checkbox"]),
     li textarea {
         padding: 15px;
         border: none;
     }
     
-    li input[type='submit'] {
+    li input[type="submit"] {
         margin-left: auto;
         padding: 8px 16px;
         border: none;
-        background: #333;
+        background: ${Colors.darkgrey};
         color: ${Colors.grey};
         text-transform: uppercase;
         letter-spacing: .09em;

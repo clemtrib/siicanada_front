@@ -1,9 +1,9 @@
-const description = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu cursus metus. Curabitur pharetra odio vitae nisl pharetra, sit amet bibendum mauris accumsan.`
+const description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu cursus metus. Curabitur pharetra odio vitae nisl pharetra, sit amet bibendum mauris accumsan."
 
 const jobTypes = ["Part-time", "Full-time"]
 
 const ad1 = {
-    id: 1,
+    id: "1",
     title: "Electrical/Avionics systems engineer (FAL)",
     createdAt: "20181012",
     type: 0,
@@ -15,7 +15,7 @@ const ad1 = {
     industry: "Aeronautic"
 },
     ad2 = {
-        id: 2,
+        id: "2",
         title: "Android developer",
         createdAt: "20181012",
         type: 1,
@@ -27,7 +27,7 @@ const ad1 = {
         industry: "Medias"
     },
     ad3 = {
-        id: 3,
+        id: "3",
         title: "Full stack java developer",
         createdAt: "20181012",
         type: 1,
